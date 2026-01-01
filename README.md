@@ -1,103 +1,102 @@
 📌 Nur Trading Agent
-MT5 EMA200 Algorithmic Trading Prototype (Python ↔ MQL5)
+MT5 EMA200 Algorithmic Trading Prototype (Python ↔ MetaTrader 5 API) 🧠
 🧠 Project Overview
 
-Nur Trading Agent is a working prototype of an algorithmic trading system designed to demonstrate how Python-based trading logic can be safely and cleanly integrated with MetaTrader 5 (MT5) using an official Expert Advisor (EA) execution layer.
+Nur Trading Agent is a working prototype of an algorithmic trading agent designed to demonstrate how Python-based strategy logic can interact with MetaTrader 5 (MT5) in a clean, stable, and professional way using the official MetaTrader 5 Python API.
 
-The project follows a separation-of-concerns architecture, where:
+The project follows a clear separation of concerns, where:
 
-Python handles decision-making and strategy logic
+Python handles all decision-making, strategy logic, and state management
 
-MT5 (MQL5 EA) handles market data access and trade execution
+MetaTrader 5 Terminal acts as the market data source and trade execution engine
 
-This ensures stability, safety, and compliance with MT5’s design principles.
+No file-based bridges, unsafe APIs, or unofficial hacks are used.
 
 🎯 Core Objective
 
 Implement a real-time EMA200 crossover strategy
 
-Execute trades on MT5 using official EA execution
+Consume live market data directly from MT5
 
-Avoid unofficial or unsafe APIs
+Execute demo trades safely
 
-Demonstrate live market integration (demo / test environment)
+Maintain discipline, state awareness, and silence when no conditions are met
 
-Provide a strong foundation for future enhancements
+Provide a strong, extensible foundation for future agent behavior and GUI
 
-🏗️ System Architecture
-MT5 Terminal (MQL5 EA)
+🏗️ System Architecture (Updated)
+MetaTrader 5 Terminal
         ↓
-   market.csv (live data)
+Official MetaTrader5 Python API
         ↓
-Python Trading Engine
+Nur Trading Agent (Python)
         ↓
-   command.txt (trade orders)
+Strategy Logic + State Machine
         ↓
-MT5 EA executes trades
+Trade Execution (Demo)
 
-Design Principles
+Key Architectural Principles
 
-Execution layer never contains strategy logic
+Strategy logic never runs inside MT5
 
-Strategy layer never touches broker directly
+Python does not use file-based IPC (no CSV, no command files)
 
-Clean IPC via file-based bridge
+MT5 remains the single source of market truth
 
-Failure isolation (Python crash ≠ MT5 crash)
+Fewer moving parts → higher reliability
+
+Clear agent state and reasoning
 
 📈 Trading Strategy
-
-Indicator:
+Indicator
 
 EMA 200
 
-Timeframe:
+Timeframe
 
 M1 (1-minute)
 
-Logic:
+Logic
 
 BUY when price crosses above EMA200
 
 SELL when price crosses below EMA200
 
-One signal per crossover (no trade spamming)
+One signal per crossover (no overtrading)
 
-Risk Controls (Prototype Level):
+Risk Controls (Prototype Level)
 
 Fixed SL / TP (demo values)
 
 Duplicate trade prevention
 
+Explicit agent states (WAITING, IN_TRADE)
+
 ⚙️ Technology Stack
 
-MetaTrader 5
+MetaTrader 5 Terminal
 
-MQL5 (Expert Advisor)
+Python 3.11+
 
-Python 3
+MetaTrader5 Official Python API
 
-CSV-based IPC (Inter-Process Communication)
+No Expert Advisors required for strategy
 
-No third-party or unofficial MT5 APIs are used.
+No CSV or file-based communication
 
 🚀 Features Implemented
 
-✅ Live market data feed from MT5
-
+✅ Direct live market data from MT5
 ✅ Real-time EMA200 calculation in Python
-
+✅ Disciplined state-based trading agent
 ✅ BUY / SELL signal generation
-
-✅ Trade execution via MT5 EA
-
-✅ Demo-safe trading workflow
-
-✅ GitHub security-compliant (no secrets in repo)
+✅ Demo-safe trade execution
+✅ Silent behavior when no valid signals
+✅ GitHub-safe (no credentials or secrets)
 
 🚧 Intentional Limitations
 
-This repository is a prototype, not a production trading bot.
+This repository is a prototype, not a production trading system.
 
 Not included (by design):
 
@@ -105,42 +104,50 @@ Position sizing
 
 Advanced money management
 
-Multi-symbol support
+Multi-symbol trading
 
 News filtering
 
 High-frequency execution
 
-These can be added in future iterations.
+Machine learning / optimization
+
+These can be added in future phases.
 
 🧪 Usage (Demo / Test Environment)
 
 Open MetaTrader 5
 
-Attach the provided EA to XAUUSD (M1)
+Log in to a demo account
 
-Enable Algo Trading
+Keep MT5 running
 
-Run Python engine:
+Run the Python agent:
 
-python main.py
+py -3.11 main.py
 
 
-The system will:
+The agent will:
 
-Listen to live market data
+Connect to MT5
 
-Detect EMA200 crossovers
+Listen to live market ticks
 
-Send trade commands to MT5
+Compute EMA200
+
+Wait patiently for valid crossovers
+
+Execute demo trades when conditions are met
 
 🔐 Security Note
 
-No API keys or secrets are stored in this repository
+No API keys or secrets are stored
 
-All sensitive credentials were intentionally removed
+Uses only the official MT5 Python API
 
-The project complies with GitHub Push Protection rules
+Fully compliant with GitHub Push Protection rules
+
+Safe for academic and public repositories
 
 🎓 Academic / Learning Use
 
@@ -148,22 +155,23 @@ This project is suitable for:
 
 Algorithmic trading demonstrations
 
-MT5 integration learning
+MT5 + Python integration learning
 
-System architecture case studies
+Trading system architecture studies
 
 College / academic submissions
 
+Agent-based system design examples
+
 🟢 Project Status
 
-✔ Live MT5 integration complete
-
-✔ Strategy validated in real-time
-
-✔ Trade execution confirmed (test environment)
-
-✔ Repository cleaned and secured
+✔ Live MT5 API integration complete
+✔ Strategy validated with real market data
+✔ Disciplined agent behavior confirmed
+✔ Demo trade execution verified
+✔ CSV / EA bridge fully removed
+✔ Ready for GUI and higher-level agent features
 
 📌 One-Line Summary
 
-A real-time EMA200 trading prototype using Python for strategy logic and MetaTrader 5 Expert Advisor for official trade execution.
+A disciplined EMA200 trading agent using Python and the official MetaTrader 5 API for real-time market interaction and demo trade execution.
