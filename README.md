@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 ### Design Principles
 
