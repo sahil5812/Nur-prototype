@@ -46,18 +46,19 @@ Strategy Logic + State Machine
 Trade Execution (Demo)
 
 ```
+---
 
--Key Architectural Rules
+- Key Architectural Rules
 
--Strategy logic never runs inside MT5
+- Strategy logic never runs inside MT5
 
--MT5 is the single source of market truth
+- MT5 is the single source of market truth
 
--Explicit agent state and reasoning at all times
+- Explicit agent state and reasoning at all times
 
--Python and MT5 failures are isolated
+- Python and MT5 failures are isolated
 
--Deterministic and debuggable execution flow
+- Deterministic and debuggable execution flow
 
 ---
 
