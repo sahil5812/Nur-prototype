@@ -194,6 +194,8 @@ These are planned for future phases.
 ```
 python main.py
 ```
+---
+
 ## Runtime Behavior
 
 - The agent will:
@@ -210,7 +212,9 @@ python main.py
 
 ---
 
-🔐 Security Note
+---
+
+## 🔐 Security Note
 
 - No API keys or secrets stored
 
@@ -236,7 +240,7 @@ python main.py
 
 ---
 
-🟢 Project Status
+## 🟢 Project Status
 
 ✔ Live MT5 API integration complete
 
