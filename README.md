@@ -125,9 +125,10 @@ Duplicate trade prevention
 
 - No third-party or unofficial MT5 libraries are used.
 
+---
 
 ## 🚀 Features Implemented
-```
+
 ✅ Direct live market data from MT5
 
 ✅ Real-time EMA200 calculation in Python
@@ -151,9 +152,10 @@ Duplicate trade prevention
 ✅ GitHub-safe (no credentials or secrets)
 
 ✅ CSV / EA bridge fully removed
-```
+
+---
 ## 🚧 Intentional Limitations
-```
+
 - This repository is a prototype, not a production trading system.
 
 - Not included (by design):
@@ -171,60 +173,68 @@ Duplicate trade prevention
 - High-frequency execution
 
 These are planned for future phases.
+
+---
+
+## 🧪 Usage (Demo / Test Environment)
+- Prerequisites
+
+ MetaTrader 5 (running)
+
+- Logged into a demo account
+
+- Python 3.11+
+
+- Install dependency:
+
 ```
-🧪 Usage (Demo / Test Environment)
-Prerequisites
-
-MetaTrader 5 (running)
-
-Logged into a demo account
-
-Python 3.11+
-
-Install dependency:
-
-pip install MetaTrader5
-
-Run the Agent
+ pip install MetaTrader5
+```
+- Run the Agent
+```
 python main.py
+```
+## Runtime Behavior
 
-Runtime Behavior
+- The agent will:
 
-The agent will:
+- Connect to MT5
 
-Connect to MT5
+- Listen to live market data
 
-Listen to live market data
+- Compute EMA200 in real time
 
-Compute EMA200 in real time
+- Wait patiently for valid conditions
 
-Wait patiently for valid conditions
+- Execute demo trades when criteria are met
 
-Execute demo trades when criteria are met
+---
 
 🔐 Security Note
 
-No API keys or secrets stored
+- No API keys or secrets stored
 
-Uses only the official MT5 Python API
+- Uses only the official MT5 Python API
 
-Fully compliant with GitHub Push Protection
+- Fully compliant with GitHub Push Protection
 
-Safe for public and academic repositories
+- Safe for public and academic repositories
 
 🎓 Academic / Learning Use
 
-Suitable for:
+- Suitable for:
 
-Algorithmic trading demonstrations
+- Algorithmic trading demonstrations
 
-MT5 + Python integration learning
+- MT5 + Python integration learning
 
-Trading system architecture studies
+- Trading system architecture studies
 
-College / academic submissions
+- College / academic submissions
 
-Agent-based system design examples
+- Agent-based system design examples
+
+---
 
 🟢 Project Status
 
@@ -240,9 +250,9 @@ Agent-based system design examples
 
 ✔ Ready for GUI and higher-level agent features
 
+---
+
 📌 One-Line Summary
 
 A disciplined EMA200 trading agent using Python and the official MetaTrader 5 API for real-time market interaction and demo trade execution.
-
-
 This is now **README-grade**, reviewer-proof, and won’t make maintainers roll their eyes.
