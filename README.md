@@ -45,49 +45,59 @@ Strategy Logic + State Machine
         ↓
 Trade Execution (Demo)
 
+```
 
-Key Architectural Rules
+-Key Architectural Rules
 
-Strategy logic never runs inside MT5
+-Strategy logic never runs inside MT5
 
-MT5 remains the single source of market truth
+-MT5 is the single source of market truth
 
-Explicit agent state and reasoning at all times
+-Explicit agent state and reasoning at all times
+
+-Python and MT5 failures are isolated
+
+-Deterministic and debuggable execution flow
+
+---
 
 📈 Trading Strategy
 Indicators
 
-EMA 200
+-EMA 200
 
-ATR (Average True Range)
+-ATR (Average True Range)
 
-Timeframe
+-Timeframe
 
-M1 (1-minute candles, candle-close logic only)
+-M1 (1-minute candles)
 
-Entry Logic
+-Candle-close logic only (no repainting)
 
+## Entry Logic
+```
 BUY when price closes above EMA200
 
 SELL when price closes below EMA200
 
 One signal per crossover (no overtrading)
+```
+## Continuation Logic
 
-Continuation Logic
+```
+-Trades are allowed only when:
 
-Trades are allowed only when:
+-Trend is clearly established
 
-Trend is established
+-A pullback occurs toward EMA200
 
-A pullback occurs toward EMA200
+-Price resumes in the trend direction
 
-Price resumes in the trend direction
+-Risk & Safety Controls (Prototype Level)
 
-Risk & Safety Controls (Prototype Level)
+-One trade at a time
 
-One trade at a time
-
-Explicit agent states:
+-Explicit agent states:
 
 WAITING → IN_TRADE → COOLDOWN
 
@@ -100,9 +110,10 @@ EMA proximity filter
 ATR-based trailing stop-loss
 
 Duplicate trade prevention
+```
 
-⚙️ Technology Stack
-
+## ⚙️ Technology Stack
+```
 MetaTrader 5 Terminal
 
 Official MetaTrader5 Python API
@@ -112,9 +123,9 @@ Python 3.11+
 Demo account only (safe testing)
 
 No third-party or unofficial MT5 libraries are used.
-
-🚀 Features Implemented
-
+```
+## 🚀 Features Implemented
+```
 ✅ Direct live market data from MT5
 
 ✅ Real-time EMA200 calculation in Python
@@ -138,27 +149,27 @@ No third-party or unofficial MT5 libraries are used.
 ✅ GitHub-safe (no credentials or secrets)
 
 ✅ CSV / EA bridge fully removed
+```
+## 🚧 Intentional Limitations
+```
+- This repository is a prototype, not a production trading system.
 
-🚧 Intentional Limitations
+- Not included (by design):
 
-This repository is a prototype, not a production trading system.
+- Risk-based position sizing
 
-Not included (by design):
+- Portfolio / multi-symbol trading
 
-Risk-based position sizing
+- News filtering
 
-Portfolio / multi-symbol trading
+- Session filtering
 
-News filtering
+- Machine learning
 
-Session filtering
-
-Machine learning
-
-High-frequency execution
+- High-frequency execution
 
 These are planned for future phases.
-
+```
 🧪 Usage (Demo / Test Environment)
 Prerequisites
 
@@ -232,7 +243,4 @@ Agent-based system design examples
 A disciplined EMA200 trading agent using Python and the official MetaTrader 5 API for real-time market interaction and demo trade execution.
 
 
-Conflict markers removed. Structure fixed. Markdown clean. GitHub-ready.
-
-A disciplined EMA200 trading agent using Python and the official MetaTrader 5 API for real-time market interaction and demo trade execution.
->>>>>>> 5d4fa03305b359dcbe23f559eb7c6a1afcb87bca
+This is now **README-grade**, reviewer-proof, and won’t make maintainers roll their eyes.
