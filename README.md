@@ -64,15 +64,16 @@ Trade Execution (Demo)
 📈 Trading Strategy
 Indicators
 
--EMA 200
+- EMA 200
 
--ATR (Average True Range)
+- ATR (Average True Range)
 
--Timeframe
+- Timeframe
 
 -M1 (1-minute candles)
 
--Candle-close logic only (no repainting)
+- Candle-close logic only (no repainting)
+---
 
 ## Entry Logic
 ```
@@ -85,29 +86,29 @@ One signal per crossover (no overtrading)
 ## Continuation Logic
 
 ```
--Trades are allowed only when:
+- Trades are allowed only when:
 
--Trend is clearly established
+- Trend is clearly established
 
--A pullback occurs toward EMA200
+- A pullback occurs toward EMA200
 
--Price resumes in the trend direction
+- Price resumes in the trend direction
 
--Risk & Safety Controls (Prototype Level)
+- Risk & Safety Controls (Prototype Level)
 
--One trade at a time
+- One trade at a time
 
--Explicit agent states:
+- Explicit agent states:
 
-WAITING → IN_TRADE → COOLDOWN
+_ WAITING → IN_TRADE → COOLDOWN
 
-Cooldown after trade close
+- Cooldown after trade close
 
-ATR-based volatility filter
+- ATR-based volatility filter
 
-EMA proximity filter
+- EMA proximity filter
 
-ATR-based trailing stop-loss
+- ATR-based trailing stop-loss
 
 Duplicate trade prevention
 ```
@@ -224,7 +225,9 @@ python main.py
 
 - Safe for public and academic repositories
 
-🎓 Academic / Learning Use
+---
+
+## 🎓 Academic / Learning Use
 
 - Suitable for:
 
