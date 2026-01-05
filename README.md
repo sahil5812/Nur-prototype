@@ -113,17 +113,19 @@ Duplicate trade prevention
 ```
 
 ## ⚙️ Technology Stack
-```
-MetaTrader 5 Terminal
+---
 
-Official MetaTrader5 Python API
+- MetaTrader 5 Terminal
 
-Python 3.11+
+- Official MetaTrader5 Python API
 
-Demo account only (safe testing)
+- Python 3.11+
 
-No third-party or unofficial MT5 libraries are used.
-```
+- Demo account only (safe testing)
+
+- No third-party or unofficial MT5 libraries are used.
+
+
 ## 🚀 Features Implemented
 ```
 ✅ Direct live market data from MT5
